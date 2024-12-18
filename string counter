@@ -1,28 +1,24 @@
 #include <stdio.h>
-#include <string.h>
-
-int main() {
-    char a[100];  // input string
-    int freq[26] = {0};  // frequency array initialized to 0 for each alphabet (a to z)
+#include<string.h>
+int main()
+{
+    int len,fr[26]={0};
+    char a[100];
     
-    // Input string
-    printf("Enter a string: ");
-    fgets(a, sizeof(a), stdin);  // Read a string from the user
-    
-    // Traverse the string and count frequency of each alphabet
-    for (int i = 0; i < strlen(a); i++) {
-        if ((a[i] >= 'a' && a[i] <= 'z')) {
-            freq[a[i] - 'a']++;  // Increase the frequency for lowercase letters
-        } else if (a[i] >= 'A' && a[i] <= 'Z') {
-            freq[a[i] - 'A']++;  // Increase the frequency for uppercase letters
+    scanf("%s",a);
+    len=strlen(a);
+    for (int i=0;i<=len;i++)
+    {
+        if(a[i]>='a' &&a[i]<='z')
+        {
+            fr[a[i]-'a']++;
         }
     }
-    
-    // Print the frequency of each alphabet
-    printf("Alphabet frequency in the string:\n");
-    for (int i = 0; i < 26; i++) {
-        if (freq[i] > 0) {
-            printf("%c: %d\n", i + 'a', freq[i]);
+    for (int i =0;i<26;i++)
+    {
+        if (fr[i]>0)
+        {
+            printf("%c:%d",i+'a',fr[i]);
         }
     }
     
